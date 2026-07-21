@@ -2,14 +2,16 @@
 
 import { useState } from "react";
 import { siteConfig } from "../../config/site";
+import { PrimaryButton } from "@/components/ui/PrimaryButton";
 
 export function Navigation() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0a0a0a]/85 backdrop-blur-xl">
       <div className="container-shell flex h-18 items-center justify-between">
-        <a href="#" className="focus-ring font-semibold tracking-tight">
-          <span className="text-[#c8ff00]">●</span> {siteConfig.shortName}
+        <a href="#" className="focus-ring inline-flex items-center gap-2 font-semibold tracking-tight">
+          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#c8ff00] text-xs text-black">●</span>
+          {siteConfig.shortName}
         </a>
         <button
           type="button"
@@ -26,9 +28,9 @@ export function Navigation() {
               {item.label}
             </a>
           ))}
-          <a href={siteConfig.primaryCta.href} className="focus-ring rounded-full bg-[#c8ff00] px-5 py-2.5 text-sm font-semibold text-black">
+          <PrimaryButton href={siteConfig.primaryCta.href} size="sm">
             {siteConfig.primaryCta.label}
-          </a>
+          </PrimaryButton>
         </nav>
       </div>
       {open && (

@@ -43,6 +43,11 @@ export const floatingCard = {
   transition: { duration: 5, repeat: Infinity, ease: "easeInOut" as const }
 };
 
+export const arrowOscillate = {
+  x: [0, 5, 0],
+  transition: { duration: 1.4, repeat: Infinity, ease: "easeInOut" as const }
+};
+
 export const slideInLeft: Variants = {
   initial: { opacity: 0, x: -28 },
   enter: { opacity: 1, x: 0, transition: { duration: 0.5, ease } }
@@ -56,4 +61,9 @@ export const slideInRight: Variants = {
 export const scaleUp: Variants = {
   initial: { opacity: 0, scale: 0.96 },
   enter: { opacity: 1, scale: 1, transition: { duration: 0.28, ease } }
+};
+
+export const connectorShuttle = {
+  x: ["-27%", "27%", "-27%"],
+  transition: { duration: 3, repeat: Infinity, ease: "easeInOut" as const }
 };
